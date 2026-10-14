@@ -17,15 +17,9 @@ export default function Notifications({ open, onClose }: NotificationsProps) {
   <div
   className="drawer-backdrop"
   role="presentation"
-    onClick={(event) => {
-      if (event.target === event.currentTarget) {
-        onClose();
-      }
-    }}
   >
     <aside
       className="notification-drawer"
-      onClick={(event) => event.stopPropagation()}
       aria-label="Notifications"
     >
       <div className="drawer-header"><div><h2>Notifications</h2><p>You are all caught up on critical alerts.</p></div><button className="icon-button" aria-label="Close notifications" onClick={onClose}><X size={18} /></button></div>

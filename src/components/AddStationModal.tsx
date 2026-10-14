@@ -33,7 +33,6 @@ export default function AddStationModal({ open, onClose, onSave }: AddStationMod
         role="dialog"
         aria-modal="true"
         aria-labelledby="add-station-title"
-        onClick={(event) => event.stopPropagation()}
       >
         <div className="modal-header">
           <h2 id="add-station-title">Add Charging Station</h2>
