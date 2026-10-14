@@ -1,5 +1,5 @@
 import { ArrowDownRight, ArrowUpRight, Bolt, Download, TrendingUp, Wallet } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import SectionHeader from "../components/SectionHeader";
 import { energyByDay } from "../data";
 import { formatCurrency } from "../utils";
