@@ -81,7 +81,9 @@ export default function AddStationModal({ open, onClose, onSave }: AddStationMod
             <button type="button" onClick={onClose}>
               Cancel
             </button>
-            <button type="submit">Add Station</button>
+            <button type="submit">
+  Create Station
+</button>
           </div>
         </form>
       </section>

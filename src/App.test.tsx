@@ -32,16 +32,28 @@ describe("VoltFlow application", () => {
     render(<App />);
     fireEvent.click(screen.getAllByRole("button", { name: /add station/i })[0]);
     const dialog = screen.getByRole("dialog", { name: /add charging station/i });
-    fireEvent.change(within(dialog).getByLabelText(/station name/i), { target: { value: "Test Solar Hub" } });
-    fireEvent.change(within(dialog).getByLabelText(/location/i), { target: { value: "Chennai · Test Road" } });
-    fireEvent.click(within(dialog).getByRole("button", { name: /create station/i }));
+    fireEvent.change(within(dialog).getByLabelText(/station name/i), {
+  target: { value: "Test Solar Hub" },
+});
+
+fireEvent.change(within(dialog).getByLabelText(/location/i), {
+  target: { value: "Chennai" },
+});
+
+
+    fireEvent.click(
+      within(dialog).getByRole("button", { name: /create station/i })
+    );
+
     expect(screen.getByText("Test Solar Hub")).toBeInTheDocument();
   });
 
   it("changes the selected page to analytics", () => {
     render(<App />);
     fireEvent.click(screen.getAllByRole("button", { name: /analytics/i })[0]);
-    expect(screen.getByRole("heading", { name: /network analytics/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /network analytics/i })
+    ).toBeInTheDocument();
     expect(screen.getByText("Hourly utilization")).toBeInTheDocument();
   });
 });
