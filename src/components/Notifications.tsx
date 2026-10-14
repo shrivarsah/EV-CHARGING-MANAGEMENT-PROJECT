@@ -13,11 +13,24 @@ const notices = [
 
 export default function Notifications({ open, onClose }: NotificationsProps) {
   if (!open) return null;
-  return <div className="drawer-backdrop" onClick={onClose}>
-    <aside className="notification-drawer" onClick={(event) => event.stopPropagation()} aria-label="Notifications">
+  return (
+  <div
+    className="drawer-backdrop"
+    onClick={(event) => {
+      if (event.target === event.currentTarget) {
+        onClose();
+      }
+    }}
+  >
+    <aside
+      className="notification-drawer"
+      onClick={(event) => event.stopPropagation()}
+      aria-label="Notifications"
+    >
       <div className="drawer-header"><div><h2>Notifications</h2><p>You are all caught up on critical alerts.</p></div><button className="icon-button" aria-label="Close notifications" onClick={onClose}><X size={18} /></button></div>
       {notices.map(({ title, body, time, icon: Icon, tone }) => <article className="notice-item" key={title}><span className={`notice-icon ${tone}`}><Icon size={18} /></span><div><strong>{title}</strong><p>{body}</p><small>{time}</small></div></article>)}
       <button className="drawer-action" onClick={onClose}>Done</button>
-    </aside>
-  </div>;
+        </aside>
+  </div>
+);
 }
