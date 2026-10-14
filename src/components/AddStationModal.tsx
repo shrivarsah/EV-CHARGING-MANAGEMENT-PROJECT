@@ -24,14 +24,10 @@ export default function AddStationModal({ open, onClose, onSave }: AddStationMod
     setName(""); setLocation(""); setChargers("8"); setPower("150 kW"); setError(""); onClose();
   };
   return (
-    <div
-  className="modal-backdrop"
-  onClick={(event) => {
-    if (event.target === event.currentTarget) {
-      onClose();
-    }
-  }}
->
+    
+
+<div className="modal-backdrop">
+
       <section
         className="modal-card"
         role="dialog"
