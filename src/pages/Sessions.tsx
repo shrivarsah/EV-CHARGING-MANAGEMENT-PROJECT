@@ -6,8 +6,8 @@ import type { Session, SessionStatus } from "../types";
 import { formatCurrency } from "../utils";
 
 interface SessionsProps {
-  sessions: Session[];
-  onUpdate: (id: string, status: SessionStatus) => void;
+  readonly sessions: Session[];
+  readonly onUpdate: (id: string, status: SessionStatus) => void;
 }
 
 export default function Sessions({ sessions, onUpdate }: SessionsProps) {

@@ -2,10 +2,10 @@ import { Activity, BatteryCharging, CalendarClock, ChartNoAxesCombined, LayoutDa
 import type { PageKey } from "../types";
 
 interface SidebarProps {
-  page: PageKey;
-  onNavigate: (page: PageKey) => void;
-  open: boolean;
-  onClose: () => void;
+  readonly page: PageKey;
+  readonly onNavigate: (page: PageKey) => void;
+  readonly open: boolean;
+  readonly onClose: () => void;
 }
 
 const navItems = [

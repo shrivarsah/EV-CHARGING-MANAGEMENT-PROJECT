@@ -4,8 +4,8 @@ import { getStationAvailability } from "../utils";
 import StatusPill from "./StatusPill";
 
 interface StationTableProps {
-  stations: Station[];
-  onSelect?: (station: Station) => void;
+  readonly stations: Station[];
+  readonly onSelect?: (station: Station) => void;
 }
 
 export default function StationTable({ stations, onSelect }: StationTableProps) {

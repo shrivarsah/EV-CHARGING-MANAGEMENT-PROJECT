@@ -1,7 +1,7 @@
 interface SectionHeaderProps {
-  title: string;
-  subtitle: string;
-  action?: React.ReactNode;
+  readonly title: string;
+  readonly subtitle: string;
+  readonly action?: React.ReactNode;
 }
 
 export default function SectionHeader({ title, subtitle, action }: SectionHeaderProps) {

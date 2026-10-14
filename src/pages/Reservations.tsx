@@ -5,8 +5,11 @@ import StatusPill from "../components/StatusPill";
 import type { Reservation, ReservationStatus } from "../types";
 
 interface ReservationsProps {
-  reservations: Reservation[];
-  onUpdate: (id: string, status: ReservationStatus) => void;
+  readonly reservations: Reservation[];
+  readonly onUpdate: (
+    id: string,
+    status: ReservationStatus
+  ) => void;
 }
 
 export default function Reservations({ reservations, onUpdate }: ReservationsProps) {

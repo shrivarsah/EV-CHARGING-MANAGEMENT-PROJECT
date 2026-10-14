@@ -9,9 +9,9 @@ import type { PageKey, Station } from "../types";
 import { formatCurrency } from "../utils";
 
 interface OverviewProps {
-  stations: Station[];
-  onNavigate: (page: PageKey) => void;
-  onAddStation: () => void;
+  readonly stations: Station[];
+  readonly onNavigate: (page: PageKey) => void;
+  readonly onAddStation: () => void;
 }
 
 export default function Overview({ stations, onNavigate, onAddStation }: OverviewProps) {

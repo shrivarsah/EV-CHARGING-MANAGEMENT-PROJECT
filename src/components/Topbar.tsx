@@ -1,11 +1,11 @@
 import { Bell, ChevronDown, Menu, Moon, Search, Sun } from "lucide-react";
 
 interface TopbarProps {
-  onMenu: () => void;
-  dark: boolean;
-  onToggleTheme: () => void;
-  onNotifications: () => void;
-  notificationCount: number;
+  readonly onMenu: () => void;
+  readonly dark: boolean;
+  readonly onToggleTheme: () => void;
+  readonly onNotifications: () => void;
+  readonly notificationCount: number;
 }
 
 export default function Topbar({ onMenu, dark, onToggleTheme, onNotifications, notificationCount }: TopbarProps) {

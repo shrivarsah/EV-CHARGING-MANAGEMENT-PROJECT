@@ -1,8 +1,8 @@
 import { CheckCheck, CircleAlert, PlugZap, X } from "lucide-react";
 
 interface NotificationsProps {
-  open: boolean;
-  onClose: () => void;
+  readonly open: boolean;
+  readonly onClose: () => void;
 }
 
 const notices = [

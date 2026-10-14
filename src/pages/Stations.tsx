@@ -7,9 +7,9 @@ import type { Station, StationStatus } from "../types";
 import { filterStations } from "../utils";
 
 interface StationsProps {
-  stations: Station[];
-  onAddStation: () => void;
-  onSelect: (station: Station) => void;
+  readonly stations: Station[];
+  readonly onAddStation: () => void;
+  readonly onSelect: (station: Station) => void;
 }
 
 export default function Stations({ stations, onAddStation, onSelect }: StationsProps) {

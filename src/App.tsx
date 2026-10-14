@@ -31,7 +31,7 @@ export default function App() {
   useEffect(() => {
     const onQuickSearch = (event: Event) => {
       const query = (event as CustomEvent<string>).detail.toLowerCase();
-      const target = initialStations.find((station) => station.name.toLowerCase().includes(query) || station.location.toLowerCase().includes(query));
+      const target = initialStations.some((station) => station.name.toLowerCase().includes(query) || station.location.toLowerCase().includes(query));
       if (target) setPage("Stations");
     };
     window.addEventListener("quick-search", onQuickSearch);

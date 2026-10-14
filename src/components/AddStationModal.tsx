@@ -3,9 +3,9 @@ import { X } from "lucide-react";
 import type { Station } from "../types";
 
 interface AddStationModalProps {
-  open: boolean;
-  onClose: () => void;
-  onSave: (station: Station) => void;
+  readonly open: boolean;
+  readonly onClose: () => void;
+  readonly onSave: (station: Station) => void;
 }
 
 export default function AddStationModal({ open, onClose, onSave }: AddStationModalProps) {

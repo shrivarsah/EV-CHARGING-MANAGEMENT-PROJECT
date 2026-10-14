@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/vitest";
 
 class ResizeObserverMock implements ResizeObserver {
-  private observedElements = new Set<Element>();
+  private readonly observedElements = new Set<Element>();
 
   observe(target: Element, _options?: ResizeObserverOptions): void {
     this.observedElements.add(target);

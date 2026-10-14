@@ -1,7 +1,7 @@
 import { getStatusTone } from "../utils";
 
 interface StatusPillProps {
-  status: string;
+  readonly status: string;
 }
 
 export default function StatusPill({ status }: StatusPillProps) {
