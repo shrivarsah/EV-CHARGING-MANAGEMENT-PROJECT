@@ -1,12 +1,12 @@
 import type { LucideIcon } from "lucide-react";
 
 interface MetricCardProps {
-  label: string;
-  value: string;
-  change: string;
-  detail: string;
-  icon: LucideIcon;
-  tone: "violet" | "cyan" | "green" | "orange";
+  readonly label: string;
+  readonly value: string;
+  readonly change: string;
+  readonly detail: string;
+  readonly icon: LucideIcon;
+  readonly tone: "violet" | "cyan" | "green" | "orange";
 }
 
 export default function MetricCard({ label, value, change, detail, icon: Icon, tone }: MetricCardProps) {
