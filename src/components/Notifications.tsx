@@ -16,7 +16,6 @@ export default function Notifications({ open, onClose }: NotificationsProps) {
   return (
   <div
   className="drawer-backdrop"
-  role="presentation"
   >
     <aside
       className="notification-drawer"

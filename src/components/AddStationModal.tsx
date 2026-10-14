@@ -28,12 +28,11 @@ export default function AddStationModal({ open, onClose, onSave }: AddStationMod
 
 <div className="modal-backdrop">
 
-      <section
-        className="modal-card"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="add-station-title"
-      >
+      <dialog
+  open
+  className="modal-card"
+  aria-labelledby="add-station-title"
+>
         <div className="modal-header">
           <h2 id="add-station-title">Add Charging Station</h2>
           <button type="button" onClick={onClose} aria-label="Close">
@@ -88,7 +87,7 @@ export default function AddStationModal({ open, onClose, onSave }: AddStationMod
 </button>
           </div>
         </form>
-      </section>
+      </dialog>
     </div>
   );
 }
