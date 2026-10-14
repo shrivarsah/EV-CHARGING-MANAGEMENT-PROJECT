@@ -104,9 +104,9 @@ kbd { border: 1px solid var(--border); border-radius: 4px; padding: 2px 4px; col
 .metric-top { display: flex; justify-content: space-between; align-items: center; }
 .metric-icon, .analytics-tile-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px; }
 .metric-icon.violet, .analytics-tile-icon.violet { background: #efedff; color: #5143d6; }
-.metric-icon.cyan { background: #e2f8fb; color: #21a8b7; }
-.metric-icon.green, .analytics-tile-icon.green { background: #e2f8f0; color: #1aa681; }
-.metric-icon.orange, .analytics-tile-icon.orange { background: #fff1e1; color: #df973e; }
+.metric-icon.cyan { background: #e2f8fb; color: #126a75; }
+.metric-icon.green, .analytics-tile-icon.green { background: #e2f8f0; color: #0b7353; }
+.metric-icon.orange, .analytics-tile-icon.orange { background: #fff1e1; color: #8a4b00; }
 .metric-change { padding: 4px 6px; border-radius: 5px; color: #199d7b; background: #e8f8f1; font-size: 8px; font-weight: 700; }
 .metric-label { color: var(--muted); font-size: 10px; margin: 16px 0 6px; }
 .metric-value { font-family: Manrope, sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -.7px; }
