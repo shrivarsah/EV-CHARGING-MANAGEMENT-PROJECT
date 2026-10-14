@@ -107,7 +107,7 @@ kbd { border: 1px solid var(--border); border-radius: 4px; padding: 2px 4px; col
 .metric-icon.cyan { background: #e2f8fb; color: #126a75; }
 .metric-icon.green, .analytics-tile-icon.green { background: #e2f8f0; color: #0b7353; }
 .metric-icon.orange, .analytics-tile-icon.orange { background: #fff1e1; color: #8a4b00; }
-.metric-change { padding: 4px 6px; border-radius: 5px; color: #199d7b; background: #e8f8f1; font-size: 8px; font-weight: 700; }
+.metric-change { padding: 4px 6px; border-radius: 5px; color: #126846; background: #e8f8f1; font-size: 8px; font-weight: 700; }
 .metric-label { color: var(--muted); font-size: 10px; margin: 16px 0 6px; }
 .metric-value { font-family: Manrope, sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -.7px; }
 .metric-detail { margin: 7px 0 0; color: var(--muted); font-size: 9px; }
@@ -164,7 +164,30 @@ tbody tr:hover { background: var(--panel-soft); }
 .station-symbol.large > span { transform: scale(1.15); }
 .status-pill { display: inline-flex; align-items: center; gap: 5px; border-radius: 5px; padding: 5px 7px; font-size: 8px; font-weight: 600; }
 .status-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-.tone-green { color: #168d70; background: #e8f8f1; }.tone-amber { color: #b57a20; background: #fff4df; }.tone-red { color: #cb4f5e; background: #fff0f1; }.tone-blue { color: #4478d5; background: #edf3ff; }.tone-gray { color: #777d94; background: #eff0f5; }
+.tone-green {
+  color: #12664f;
+  background: #e8f8f1;
+}
+
+.tone-amber {
+  color: #754800;
+  background: #fff4df;
+}
+
+.tone-red {
+  color: #a62d3a;
+  background: #fff0f1;
+}
+
+.tone-blue {
+  color: #2454a6;
+  background: #edf3ff;
+}
+
+.tone-gray {
+  color: #545b70;
+  background: #eff0f5;
+}
 .availability-cell { display: flex; align-items: center; gap: 7px; }
 .progress-track, .performance-track { width: 52px; height: 5px; border-radius: 6px; overflow: hidden; background: var(--border); }
 .progress-track span, .performance-track span { display: block; height: 100%; border-radius: inherit; background: #7467f0; }
