@@ -219,7 +219,7 @@ tbody tr:hover { background: var(--panel-soft); }
 .summary-tile > strong { font-family: Manrope, sans-serif; font-size: 22px; letter-spacing: -.4px; }
 .summary-tile > strong small { font-size: 10px; color: var(--muted); }
 .summary-tile > small { display: flex; align-items: center; gap: 5px; color: var(--muted); font-size: 8px; }
-.network-status-text { display: flex; align-items: center; gap: 7px; color: #1aa681; font-size: 17px !important; }
+.network-status-text { display: flex; align-items: center; gap: 7px; color: #1aa681; font-size: 17px; }
 .directory-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 17px 18px; }
 .station-directory { overflow: hidden; }
 .table-tools { display: flex; align-items: center; gap: 8px; }
@@ -362,6 +362,14 @@ background: #e3dfff; }
   .large-chart { height: 210px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  :root,
+  :root *,
+  :root *::before,
+  :root *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
 }
 }
