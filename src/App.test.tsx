@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import App from "./App";
 
@@ -205,4 +205,84 @@ it("shows an error when the charger count exceeds 100", () => {
   expect(dialog.textContent).toContain(
     "Chargers must be a whole number between 1 and 100."
   );
+  });
+
+  it("closes the selected station overlay with Escape", () => {
+  render(<App />);
+
+  fireEvent.click(
+    screen.getAllByRole("button", { name: /stations/i })[0]
+  );
+
+  fireEvent.click(
+  screen.getAllByRole("button", { name: /^View /i })[0]
+);
+
+  const closeButton = screen.getByRole("button", {
+    name: /close selected station/i,
+  });
+
+  fireEvent.keyDown(closeButton, { key: "Escape" });
+
+  expect(
+    screen.queryByRole("button", { name: /close selected station/i })
+  ).not.toBeInTheDocument();
+}, 15000);
+
+it("closes the selected station overlay when clicked", () => {
+  render(<App />);
+
+  fireEvent.click(
+    screen.getAllByRole("button", { name: /stations/i })[0]
+  );
+
+  fireEvent.click(
+  screen.getAllByRole("button", { name: /^View /i })[0]
+);
+
+  fireEvent.click(
+    screen.getByRole("button", { name: /close selected station/i })
+  );
+
+  expect(
+    screen.queryByRole("button", { name: /close selected station/i })
+  ).not.toBeInTheDocument();
+}, 15000);
+
+it("navigates to stations when quick search finds a match", async () => {
+  render(<App />);
+
+  const search = screen.getAllByRole("textbox", {
+  name: /quick search/i,
+})[0];
+
+  fireEvent.change(search, {
+    target: { value: "Marina" },
+  });
+
+  fireEvent.keyDown(search, { key: "Enter", code: "Enter" });
+
+  expect(
+  (await screen.findAllByRole("heading", {
+    name: /station management/i,
+  })).length
+).toBeGreaterThan(0);
+});
+
+it("stays on the overview when quick search finds no match", () => {
+  render(<App />);
+
+  act(() => {
+    window.dispatchEvent(
+      new CustomEvent<string>("quick-search", {
+        detail: "NoMatchingStationXYZ",
+      })
+    );
+  });
+
+  expect(
+  screen.getAllByRole("heading", {
+    name: /operations overview/i,
+  }).length
+).toBeGreaterThan(0);
 });
