@@ -15,7 +15,8 @@ export default function Notifications({ open, onClose }: NotificationsProps) {
   if (!open) return null;
   return (
   <div
-    className="drawer-backdrop"
+  className="drawer-backdrop"
+  role="presentation"
     onClick={(event) => {
       if (event.target === event.currentTarget) {
         onClose();
