@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Activity, ArrowUpRight, PlugZap } from "lucide-react";
+import { PlugZap } from "lucide-react";
 import AddStationModal from "./components/AddStationModal";
 import Notifications from "./components/Notifications";
 import Sidebar from "./components/Sidebar";
@@ -62,6 +62,19 @@ export default function App() {
     </main>
     <AddStationModal open={addStationOpen} onClose={() => setAddStationOpen(false)} onSave={addStation} />
     <Notifications open={notificationsOpen} onClose={() => setNotificationsOpen(false)} />
-    {selectedStation && <div className="modal-backdrop" onClick={() => setSelectedStation(null)}><section className="modal-card detail-modal" role="dialog" aria-modal="true" aria-labelledby="station-detail-title" onClick={(event) => event.stopPropagation()}><div className="modal-heading"><div><span className="eyebrow">STATION DETAILS</span><h2 id="station-detail-title">{selectedStation.name}</h2><p>{selectedStation.id} · {selectedStation.location}</p></div><button className="icon-button" aria-label="Close station details" onClick={() => setSelectedStation(null)}>×</button></div><div className="detail-grid"><div><span>Station status</span><strong>{selectedStation.status}</strong></div><div><span>Power capacity</span><strong>{selectedStation.power}</strong></div><div><span>Available connectors</span><strong>{selectedStation.available} / {selectedStation.chargers}</strong></div><div><span>Energy today</span><strong>{selectedStation.energyToday.toLocaleString()} kWh</strong></div></div><div className="notice-banner"><Activity size={18} /><div><strong>Demo station record</strong><p>This detail panel uses sample data. Real-time status requires a connected backend.</p></div></div><button className="primary-button full-button" onClick={() => setSelectedStation(null)}>Close details <ArrowUpRight size={15} /></button></section></div>}
+    {selectedStation && (
+  <div
+    className="modal-backdrop"
+    onClick={() => setSelectedStation(null)}
+    onKeyDown={(event) => {
+      if (event.key === "Escape") {
+        setSelectedStation(null);
+      }
+    }}
+    role="button"
+    tabIndex={0}
+    aria-label="Close selected station"
+  />
+)}
   </div>;
 }
