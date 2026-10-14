@@ -63,7 +63,8 @@ export default function App() {
     <AddStationModal open={addStationOpen} onClose={() => setAddStationOpen(false)} onSave={addStation} />
     <Notifications open={notificationsOpen} onClose={() => setNotificationsOpen(false)} />
     {selectedStation && (
-  <div
+  <button
+    type="button"
     className="modal-backdrop"
     onClick={() => setSelectedStation(null)}
     onKeyDown={(event) => {
@@ -71,8 +72,6 @@ export default function App() {
         setSelectedStation(null);
       }
     }}
-    role="button"
-    tabIndex={0}
     aria-label="Close selected station"
   />
 )}
