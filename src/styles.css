@@ -43,14 +43,14 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .app-shell { min-height: 100vh; }
 .sidebar { width: 246px; position: fixed; z-index: 30; inset: 0 auto 0 0; display: flex; flex-direction: column; padding: 25px 15px 16px; background: var(--sidebar); color: #f6f7ff; }
 .brand-row { display: flex; align-items: center; gap: 11px; padding: 0 8px 31px; }
-.brand-mark { width: 39px; height: 39px; display: grid; place-items: center; color: white; background: linear-gradient(135deg, #8d80ff, #5b4be0); border-radius: 12px; box-shadow: 0 6px 20px #7467f044; }
+.brand-mark { width: 39px; height: 39px; display: grid; place-items: center; color: white; background: linear-gradient(135deg, #6254e8, #5143d6); border-radius: 12px; box-shadow: 0 6px 20px #7467f044; }
 .brand-row strong { display: block; font-family: Manrope, sans-serif; font-size: 21px; letter-spacing: -.8px; }
 .brand-row span { display: block; color: #898eaf; font-size: 8px; letter-spacing: 1.5px; margin-top: 2px; }
 .workspace-label { padding: 0 12px; color: #747b9c; font-size: 9px; letter-spacing: 1.6px; font-weight: 700; margin-bottom: 12px; }
 .main-nav { display: grid; gap: 5px; }
 .nav-item { width: 100%; min-height: 43px; display: flex; align-items: center; gap: 12px; border: 0; border-radius: 9px; padding: 0 12px; background: transparent; color: #a8aec9; text-align: left; font-size: 12px; font-weight: 500; }
-.nav-item:hover { color: white; background: #ffffff0c; }
-.nav-item.active { background: linear-gradient(100deg, #7467f0, #6658e4); color: white; box-shadow: 0 5px 15px #6658e433; }
+.nav-item:hover { color: white; background: #262b43; }
+.nav-item.active { background: linear-gradient(100deg, #6254e8, #5143d6); color: white; box-shadow: 0 5px 15px #6658e433; }
 .nav-item.active svg { color: white; }
 .nav-count { margin-left: auto; border-radius: 6px; padding: 2px 6px; background: #ffffff25; color: white; font-size: 10px; }
 .lower-label { margin-top: 31px; }
